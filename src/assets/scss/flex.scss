@@ -1,0 +1,101 @@
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-auto {
+  flex: auto;
+}
+.text-right{
+  text-align: right !important;
+}
+
+$displays: inline, inline-block, block, table, table-row, table-cell, flex,
+  inline-flex, none;
+@each $display in $displays {
+  .d-#{$display} {
+    display: $display !important;
+  }
+}
+
+$positions: static, relative, absolute, fixed, sticky;
+@each $position in $positions {
+  .position-#{$position} {
+    position: $position !important;
+  }
+}
+
+$flexDirections: row, column, row-reverse, column-reverse;
+@each $value in $flexDirections {
+  .flex-#{$value} {
+    flex-direction: $value !important;
+  }
+}
+
+$justifyContents: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'between': space-between,
+  'around': space-around,
+  'evenly': space-evenly,
+);
+
+@each $key, $value in $justifyContents {
+  .justify-content-#{$key} {
+    justify-content: $value !important;
+  }
+}
+
+$alignItems: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'baseline': baseline,
+  'stretch': stretch,
+  'evenly': space-evenly,
+);
+
+@each $key, $value in $alignItems {
+  .align-items-#{$key} {
+    -ms-flex-align: $value !important;
+    align-items: $value !important;
+  }
+}
+
+$alignContents: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'auto': auto,
+  'baseline': baseline,
+  'stretch': stretch,
+);
+
+@each $key, $value in $alignContents {
+  .align-content-#{$key} {
+    align-content: $value !important;
+  }
+}
+
+.align-items-stretch {
+  -ms-flex-align: stretch !important;
+  align-items: stretch !important;
+}
+
+.align-self-center {
+  -ms-flex-align: center !important;
+  align-self: center !important;
+}
+
+@media (min-width: 768px) {
+  .d-md-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .d-lg-none {
+    display: none !important;
+  }
+}
