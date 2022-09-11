@@ -1,19 +1,18 @@
 import { Button, Form, Input, message } from "antd";
 import React from "react";
 import styles from "./Login.module.scss";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const  navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onFinish = (values: any) => {
-    message.success('Login success');
+    message.success(`Welcome ${values.username}, Login success`);
     navigate(`/players`);
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    message.error('Login fail');
+    message.error("Login fail");
   };
   return (
     <div className={styles.login}>
